@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Contact | CodeCraft Technologies{% endblock %}
+{% block content %}
+<section class="page-hero page-hero-compact"><div class="container"><div class="eyebrow eyebrow-dark">LET'S START A CONVERSATION</div><h1>Tell us what you're<br><span class="gradient-text">thinking about.</span></h1><p>A few details are enough to get started. We'll use your message to understand your project and discuss the next step.</p></div></section>
+<section class="section section-white"><div class="container contact-layout">
+  <div class="contact-sidebar"><div class="contact-note"><div class="contact-note-icon">✳</div><h2>Not sure where to begin?</h2><p>That's okay. Describe the problem you're trying to solve, even if you don't know the technical details yet.</p></div><div class="contact-detail"><span class="contact-detail-icon">↗</span><div><b>Clear next steps</b><p>We'll review the request and discuss scope, timing and budget.</p></div></div><div class="contact-detail"><span class="contact-detail-icon">₹</span><div><b>Budget-aware planning</b><p>We can discuss a smaller first version if your budget is limited.</p></div></div><div class="contact-detail"><span class="contact-detail-icon">⌁</span><div><b>Remote-friendly</b><p>Projects can be discussed and managed online.</p></div></div></div>
+  <div class="contact-form-wrap"><form method="POST" action="{{ url_for('contact') }}" class="contact-form" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="form-title"><h2>Project inquiry</h2><p>Fields marked * are required.</p></div>
+    <div class="form-row"><div class="form-field">{{ form.name.label }} <span>*</span>{{ form.name(placeholder="Your name", autocomplete="name") }}{% for error in form.name.errors %}<small class="field-error">{{ error }}</small>{% endfor %}</div><div class="form-field">{{ form.email.label }} <span>*</span>{{ form.email(placeholder="you@example.com", autocomplete="email") }}{% for error in form.email.errors %}<small class="field-error">{{ error }}</small>{% endfor %}</div></div>
+    <div class="form-row"><div class="form-field">{{ form.phone.label }}{{ form.phone(placeholder="Optional", autocomplete="tel") }}{% for error in form.phone.errors %}<small class="field-error">{{ error }}</small>{% endfor %}</div><div class="form-field">{{ form.service.label }} <span>*</span>{{ form.service() }}{% for error in form.service.errors %}<small class="field-error">{{ error }}</small>{% endfor %}</div></div>
+    <div class="form-field">{{ form.budget.label }}{{ form.budget() }}</div>
+    <div class="form-field">{{ form.message.label }} <span>*</span>{{ form.message(placeholder="What would you like to build? Who will use it? Any features or deadline you have in mind?", rows="5") }}<div class="field-hint">Please don't include passwords, payment details or sensitive personal information.</div>{% for error in form.message.errors %}<small class="field-error">{{ error }}</small>{% endfor %}</div>
+    <button class="btn btn-primary btn-submit" type="submit">Send project inquiry <span>↗</span></button><p class="privacy-note">Your inquiry is saved so it can be reviewed. Configure the business email and privacy information before launching publicly.</p>
+  </form></div>
+</div></section>
+{% endblock %}

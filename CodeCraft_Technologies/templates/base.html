@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CodeCraft Technologies builds responsive websites and practical custom software for small businesses, students and organisations.">
+  <meta name="theme-color" content="#111827">
+  <title>{% block title %}CodeCraft Technologies | Websites & Software{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="CodeCraft Technologies home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy">CodeCraft <small>TECHNOLOGIES</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}" {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ url_for('services') }}" {% if request.endpoint == 'services' %}aria-current="page"{% endif %}>Services</a>
+        <a href="{{ url_for('projects') }}" {% if request.endpoint == 'projects' %}aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ url_for('about') }}" {% if request.endpoint == 'about' %}aria-current="page"{% endif %}>About</a>
+        <a class="nav-cta" href="{{ url_for('contact') }}">Let's talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container flash-area" role="status" aria-live="polite">
+        {% for category, message in messages %}<div class="flash flash-{{ category }}">{{ message }}</div>{% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="{{ url_for('home') }}">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span class="brand-copy">CodeCraft <small>TECHNOLOGIES</small></span>
+        </a>
+        <p>Thoughtful websites and useful software, built for real-world needs.</p>
+      </div>
+      <div class="footer-links"><strong>Explore</strong><a href="{{ url_for('services') }}">Services</a><a href="{{ url_for('projects') }}">Projects</a><a href="{{ url_for('about') }}">About us</a></div>
+      <div class="footer-links"><strong>Start a project</strong><a href="{{ url_for('contact') }}">Contact</a><span>Remote-friendly · India</span><span class="footer-note">Independent developer-led studio</span></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year">2026</span> CodeCraft Technologies</span><span>Built with care, one project at a time.</span></div>
+  </footer>
+</body>
+</html>

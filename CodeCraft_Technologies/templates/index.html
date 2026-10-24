@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}CodeCraft Technologies | Websites & Software{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="status-dot"></span> INDEPENDENT DIGITAL STUDIO</div>
+      <h1>Good ideas deserve<br><span class="gradient-text">great websites.</span></h1>
+      <p class="hero-lead">We design and build clean websites and practical software that help people and small businesses move forward.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="{{ url_for('contact') }}">Start a project <span aria-hidden="true">↗</span></a><a class="btn btn-quiet" href="{{ url_for('projects') }}">Explore our work <span aria-hidden="true">→</span></a></div>
+      <div class="hero-proof"><div class="avatar-stack"><span>W</span><span>S</span><span>+</span></div><p><strong>Small projects. Real solutions.</strong><br><span>Personal attention from first idea to launch.</span></p></div>
+    </div>
+    <div class="hero-visual" aria-label="Illustration of a website dashboard">
+      <div class="float-card float-card-top"><span class="mini-icon">✳</span><div><strong>Built around you</strong><small>Clear. Useful. Responsive.</small></div></div>
+      <div class="browser-card">
+        <div class="browser-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>your-next-idea.in</span><span class="browser-lock">⌑</span></div>
+        <div class="mock-site">
+          <div class="mock-nav"><b>your brand.</b><span>About&nbsp;&nbsp; Services&nbsp;&nbsp; Contact</span></div>
+          <div class="mock-content"><div class="mock-tag">MADE FOR YOUR BUSINESS</div><div class="mock-heading">Make your<br>next move.</div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-button">Let's get started&nbsp; ↗</div></div>
+          <div class="mock-stats"><div><b>01</b><small>Clear goals</small></div><div><b>02</b><small>Smart design</small></div><div><b>03</b><small>Built to work</small></div></div>
+        </div>
+      </div>
+      <div class="float-card float-card-bottom"><span class="check-icon">✓</span><div><strong>Mobile-friendly</strong><small>Looks good on every screen</small></div></div>
+    </div>
+  </div>
+  <div class="container hero-bottom"><span>WHAT WE DO</span><div class="hero-services"><span>Websites</span><i></i><span>Custom software</span><i></i><span>Python & Flask</span><i></i><span>Ongoing support</span></div></div>
+</section>
+<section class="section section-white">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow eyebrow-dark">HOW WE CAN HELP</div><h2>Digital tools that do<br>more than look good.</h2></div><p>From a first website to a custom dashboard, the goal is always the same: make things easier for the people using them.</p></div>
+    <div class="service-grid">
+      <article class="service-card"><div class="card-icon icon-blue">↗</div><span class="card-number">01 / WEB</span><h3>Websites that work</h3><p>Responsive, easy-to-use websites for businesses, creators and organisations.</p><a href="{{ url_for('services') }}">Explore website services <span>→</span></a></article>
+      <article class="service-card"><div class="card-icon icon-violet">⌘</div><span class="card-number">02 / SOFTWARE</span><h3>Software made useful</h3><p>Custom portals, booking systems and dashboards designed around your workflow.</p><a href="{{ url_for('services') }}">Explore software services <span>→</span></a></article>
+      <article class="service-card"><div class="card-icon icon-green">⟳</div><span class="card-number">03 / SUPPORT</span><h3>Help after launch</h3><p>Practical updates, bug fixes and ongoing support as your needs change.</p><a href="{{ url_for('services') }}">Explore support plans <span>→</span></a></article>
+    </div>
+  </div>
+</section>
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow eyebrow-dark">SELECTED CONCEPTS</div><h2>Ideas turned into<br>working experiences.</h2></div><a class="text-link" href="{{ url_for('projects') }}">View all projects <span>↗</span></a></div>
+    <div class="project-grid">
+      <a class="project-card project-smartgram" href="{{ url_for('projects') }}"><div class="project-art"><div class="art-top"><span>SmartGram</span><span>↗</span></div><div class="art-panels"><div class="art-side"></div><div class="art-main"><i></i><i></i><i></i><div class="art-chart"></div></div></div></div><div class="project-info"><div><h3>SmartGram</h3><p>Community services · Flask concept</p></div><span class="project-arrow">↗</span></div></a>
+      <a class="project-card project-catering" href="{{ url_for('projects') }}"><div class="project-art"><div class="art-top"><span>SmartCatering</span><span>↗</span></div><div class="catering-ui"><div class="catering-head"></div><div class="catering-row"><i></i><i></i><i></i></div><div class="catering-bottom"><i></i><i></i></div></div></div><div class="project-info"><div><h3>SmartCatering</h3><p>Event workflows · Software concept</p></div><span class="project-arrow">↗</span></div></a>
+    </div>
+    <p class="disclaimer">These are portfolio concept previews. Ask for a live demo to confirm current functionality.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container process-wrap">
+    <div class="process-intro"><div class="eyebrow eyebrow-dark">A SIMPLE PROCESS</div><h2>Clear steps.<br>No confusing tech talk.</h2><p>You don't need to know how to code. We'll start with what you need your website or software to do.</p><a class="btn btn-dark" href="{{ url_for('contact') }}">Tell us your idea <span>↗</span></a></div>
+    <div class="process-list"><div class="process-step"><span>01</span><div><h3>Talk it through</h3><p>We understand your goals, users, budget and must-have features.</p></div><b>↗</b></div><div class="process-step"><span>02</span><div><h3>Plan and build</h3><p>You get a clear scope, progress updates and a chance to review the work.</p></div><b>↗</b></div><div class="process-step"><span>03</span><div><h3>Test and launch</h3><p>We check the important flows and help you prepare for launch.</p></div><b>↗</b></div></div>
+  </div>
+</section>
+<section class="cta-section"><div class="container cta-inner"><div><div class="eyebrow">HAVE AN IDEA?</div><h2>Let's make it real.</h2><p>Tell us what you're planning. We'll help you figure out a practical next step.</p></div><a class="btn btn-light" href="{{ url_for('contact') }}">Start a conversation <span>↗</span></a></div></section>
+{% endblock %}
